@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>App</title>
+  <link rel="stylesheet" href="https://davidpaulsson.se/no-class/css/no-class.min.css"/>
+ </head>
+ <style>
+   
+ </style>
+ <body>
+ 
+<!-- image upload start-->
+<h2>Simple Django+OpenCV Example</h2>
+
+  <form method="POST" enctype="multipart/form-data">
+    <fieldset>
+        <legend>Upload an image</legend>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </fieldset>
+  </form>
+
+  <h2>Result</h2>
+  {% if post %}
+  <img style="display: block; margin-left: auto; margin-right: auto; width: 50%;" src="{{ post.document.url }}">
+  <p>File uploaded at: <a href="{{ post.document.url }}">{{ post.document }}</a></p>
+  {% endif %}
+ 
+<!-- image upload end -->
+ 
+</body>
+</html>

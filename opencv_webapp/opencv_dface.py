@@ -26,5 +26,5 @@ def opencv_dface(path):
       cv2.imwrite(path, img)
  
    else:
-      print('someting error')
+      print('something is wrong')
       print(path)
